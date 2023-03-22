@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useSearchParams } from "react-router-dom";
 import TodoItem, { Todo } from "../components/TodoItem";
+import TodoItemForm from "../components/TodoItemForm";
 
 const TodoDetailsPage = () => {
     const { id } = useParams();
@@ -21,7 +22,8 @@ const TodoDetailsPage = () => {
     return (
     <>
         <h1>To do Details</h1>
-        {item && <TodoItem item={item} readonly={true}></TodoItem>}
+        {/* TODO: render a Todo form */}
+        {item && <TodoItemForm item={item} ></TodoItemForm>}
     </>)
 }
 

@@ -9,15 +9,14 @@ export type Todo = {
 
 interface TodoItemProps {
     item: Todo;
-    readonly?: boolean;
 }
 
-const TodoItem = ({item, readonly}: TodoItemProps) =>{
+const TodoItem = ({item}: TodoItemProps) =>{
     const { id,todo, completed} = item ;
     return(
         <div>
-            <input type='checkbox' checked={completed} onChange={()=>{}} readOnly={readonly}></input>
-            {readonly ? <span>{todo}</span> :<Link to={id.toString()}>{todo}</Link>}
+            <input type='checkbox' checked={completed} onChange={()=>{}}></input>
+            <Link to={id.toString()}>{todo}</Link>
         </div>
     )
 
