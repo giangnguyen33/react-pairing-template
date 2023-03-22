@@ -5,16 +5,16 @@ import TodoList from "../components/TodoList";
 const TodoListPage = () => {
     const [todos, setTodos] = useState([]);
 
-    useEffect(()=>{
-        const fetchData = async()=> {
-            const data =  await fetch('https://dummyjson.com/todos')
-            .then(res => res.json())
-       
-            setTodos(data.todos);
-            return data
-          }
-        fetchData();
+    const fetchData = async()=> {
+        const data =  await fetch('https://dummyjson.com/todos')
+        .then(res => res.json())
+   
+        setTodos(data.todos);
+        return data
+      }
 
+    useEffect(()=>{
+        fetchData();
     },[])
 
 

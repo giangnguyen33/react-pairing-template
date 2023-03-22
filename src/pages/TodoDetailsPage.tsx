@@ -6,16 +6,16 @@ const TodoDetailsPage = () => {
     const { id } = useParams();
     const [item, setItem] = useState<Todo>();
     
-    useEffect(()=>{
-        const fetchData = async()=> {
-            const data =  await fetch(`https://dummyjson.com/todos/${id}`)
-            .then(res => res.json())
-       
-            setItem(data);
-            return data
-          }
-        fetchData();
+    const fetchData = async()=> {
+        const data =  await fetch(`https://dummyjson.com/todos/${id}`)
+        .then(res => res.json())
+   
+        setItem(data);
+        return data
+      }
 
+    useEffect(()=>{
+        fetchData();
     },[])
    
     return (
