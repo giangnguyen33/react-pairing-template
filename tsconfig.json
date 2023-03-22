@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "lib": ["es2021", "esnext", "dom"],
+    "target": "es2021",
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "rootDir": "src",
+    "jsx": "react"
+  }
+}
