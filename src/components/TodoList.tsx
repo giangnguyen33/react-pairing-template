@@ -1,22 +1,21 @@
 import React from "react";
+import styled from "styled-components";
 import TodoItem ,{ Todo } from "./TodoItem";
 
+const List = styled.ul({
+    width: "100%",
+    listStyle: "none",
+  });
+  
 interface ToldoListProps {
     todos: Todo[]
 }
 
 const TodoList = ({todos}: ToldoListProps) =>{
     return(
-        <ul>
-            {todos.map((item,index) => {
-                return(
-                    <li key = {index}>
-                       <TodoItem item = {item}></TodoItem> 
-                    </li>
-                )
-            }) 
-        }
-        </ul>
+        <List>
+            {todos.map((item, index) => (<TodoItem key={index} item = {item}></TodoItem> )) }
+        </List>
     )
 
 }

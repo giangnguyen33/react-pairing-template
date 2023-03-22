@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { useParams, useSearchParams } from "react-router-dom";
-import TodoItem, { Todo } from "../components/TodoItem";
+import { useParams } from "react-router-dom";
+import {Header, Wrapper} from "../atomic";
+import  { Todo } from "../components/TodoItem";
 import TodoItemForm from "../components/TodoItemForm";
 
 const TodoDetailsPage = () => {
@@ -20,11 +21,11 @@ const TodoDetailsPage = () => {
     },[])
    
     return (
-    <>
-        <h1>To do Details</h1>
-        {/* TODO: render a Todo form */}
-        {item && <TodoItemForm item={item} ></TodoItemForm>}
-    </>)
+        <Wrapper>
+            <Header>Todo Details</Header>
+            {item && <TodoItemForm item={item} ></TodoItemForm>}
+        </Wrapper>
+    )
 }
 
 export default TodoDetailsPage;

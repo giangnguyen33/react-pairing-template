@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { Todo } from "../components/TodoItem";
 import TodoList from "../components/TodoList";
+import {Header,Wrapper} from "../atomic";
 
 const TodoListPage = () => {
     const [todos, setTodos] = useState([]);
@@ -19,11 +19,12 @@ const TodoListPage = () => {
 
 
     return (
-    <>
-    <h1>To do List</h1>
-    <TodoList todos={todos}></TodoList>
-        
-    </>)
+        <Wrapper>
+            <Header>Todo List</Header>
+            <TodoList todos={todos}></TodoList>
+            
+        </Wrapper>
+    )
 }
 
 export default TodoListPage;

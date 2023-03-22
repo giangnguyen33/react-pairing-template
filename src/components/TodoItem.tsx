@@ -1,5 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import {Checkbox} from "../atomic/Checkbox";
+import {Row}  from "../atomic";
+
 
 export type Todo = {
     id: string, 
@@ -14,10 +17,10 @@ interface TodoItemProps {
 const TodoItem = ({item}: TodoItemProps) =>{
     const { id,todo, completed} = item ;
     return(
-        <div>
-            <input type='checkbox' checked={completed} onChange={()=>{}}></input>
+        <Row>
+            <Checkbox checked={completed}/>
             <Link to={id.toString()}>{todo}</Link>
-        </div>
+        </Row>
     )
 
 }
