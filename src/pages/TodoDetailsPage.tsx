@@ -21,7 +21,7 @@ const TodoDetailsPage = () => {
     return (
     <>
         <h1>To do Details</h1>
-        {item && <TodoItem item={item}></TodoItem>}
+        {item && <TodoItem item={item} readonly={true}></TodoItem>}
     </>)
 }
 
